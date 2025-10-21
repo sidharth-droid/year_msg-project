@@ -20,6 +20,10 @@ mode = StringVar()
 Result = StringVar()
 
 
+# Encrypts a message using a repeating key with byte-wise Vigenère-style logic.
+# Each character in the message is combined with a character from the key (cycled as needed),
+# by adding their ASCII values modulo 256. The result is then encoded using URL-safe Base64.
+# This method supports full byte-range characters, making it suitable for non-alphabetic data.
 def Encode(key,message):
     enc=[]
     for i in range(len(message)):
